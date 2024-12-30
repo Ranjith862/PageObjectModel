@@ -8,13 +8,19 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPageObjects {
 
 	@FindBy(name = "username")
-	WebElement username;
+	private WebElement username;
 
 	@FindBy(name = "password")
-	WebElement password;
+	private WebElement password;
 
 	@FindBy(xpath = "//button[@type='submit']")
-	WebElement loginButton;
+	private WebElement loginButton;
+
+	@FindBy(xpath = "//p[text()='Invalid credentials']")
+	private WebElement errorMessage;
+
+	@FindBy(xpath = "//h6[text()='Dashboard']")
+	private WebElement dashboard;
 
 	public LoginPageObjects(WebDriver driver) {
 		PageFactory.initElements(driver, this); // Initialize elements
@@ -32,4 +38,11 @@ public class LoginPageObjects {
 		loginButton.click();
 	}
 
+	public String getErrorMessageForInvalid() {
+		return errorMessage.getText();
+	}
+
+	public String getDashBoardAfterLogin() {
+		return dashboard.getText();
+	}
 }

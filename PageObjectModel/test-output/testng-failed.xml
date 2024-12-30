@@ -5,10 +5,9 @@
     <classes>
       <class name="testCases.LoginPageandLogoutTestCase">
         <methods>
+          <include name="blankUnameAndPword"/>
           <include name="closeChrome"/>
-          <include name="loginFunction"/>
           <include name="openChrome"/>
-          <include name="logoutFunction"/>
         </methods>
       </class> <!-- testCases.LoginPageandLogoutTestCase -->
     </classes>

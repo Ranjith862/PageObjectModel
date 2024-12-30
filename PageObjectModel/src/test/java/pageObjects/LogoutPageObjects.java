@@ -8,10 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 public class LogoutPageObjects {
 
 	@FindBy(xpath = "//span[@class='oxd-userdropdown-tab']")
-	WebElement drop;
+	private WebElement drop;
 
 	@FindBy(linkText = "Logout")
-	WebElement logOutLink;
+	private WebElement logOutLink;
 
 	public LogoutPageObjects(WebDriver driver) {
 		PageFactory.initElements(driver, this);
